@@ -26,6 +26,7 @@ public class DaoFactory {
         setProperties(programPath);
         setDriver();
     }
+
     // возвращает драйвер базы данных
     private void setDriver() throws ClassNotFoundException {
         try {
@@ -37,6 +38,7 @@ public class DaoFactory {
             throw e;
         }
     }
+
     // устанавливает проперти из файла
     private void setProperties(String filePath) throws IOException {
         Properties prop = new Properties();

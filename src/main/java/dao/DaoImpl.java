@@ -63,7 +63,7 @@ public class DaoImpl implements Dao {
         return result;
     }
 
-  //------------------------------------
+    //------------------------------------
     //ниже находятся 4 метода поиска для операции search
     private JSONObject searchByLastName(String lastName) throws SQLException {
         JSONObject result;

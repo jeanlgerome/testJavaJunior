@@ -32,6 +32,7 @@ public class ArgsChecker {
         }
         return arg;
     }
+
     // проверяет корректность дат
     public static void verify(LocalDate startDate, LocalDate endDate) throws WrongDateException {
         if (endDate.isBefore(startDate)) {
