@@ -2,7 +2,7 @@
 
 Инструкция по сборке/запуску:
 
-jar с необходимыми файлами с необходимой для запуска структурой находятся в testJavaJunior/out/artifacts/testJavaJunior_jar/
+jar и необходимые файлы с необходимой для запуска структурой находятся в testJavaJunior/out/artifacts/testJavaJunior_jar/
 Необходимые файлы:
 logging.properties - проперти логгера 
 application.properties - проперти базы данных
