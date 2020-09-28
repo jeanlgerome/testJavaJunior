@@ -25,7 +25,7 @@ public class WeekdaysCounter {
         int sideWeeksDays = 0;
         int sideWeeksWeekends = 0;
         if (allDays > 25) {
-
+             // если дней много, то вычисляются 2 крайние, неполные недели перебором. Оставшиеся целые арифметически
             while (currentDate.getDayOfWeek().getValue() != 1) {
                 sideWeeksDays++;
                 if (currentDate.getDayOfWeek().getValue() == 7 || currentDate.getDayOfWeek().getValue() == 6) {
@@ -46,6 +46,7 @@ public class WeekdaysCounter {
             weekDays = allDays - sideWeeksWeekends - fullWeeksWeekends;
 
         } else {
+            //если дней мало, то все дни вычисляется перебором
             while (!currentDate.isAfter(endDate)) {
                 if (currentDate.getDayOfWeek().getValue() != 6 && currentDate.getDayOfWeek().getValue() != 7) {
                     weekDays++;

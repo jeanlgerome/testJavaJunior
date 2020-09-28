@@ -11,7 +11,7 @@ public final class Constants {
 
     public static final String SQL_STAT_PURCHASES = "SELECT  productName,  SUM(Price)  as sum  from Customers inner join Purchases ON Customers.id= Purchases.Customer INNER JOIN Products ON Purchases.Product=Products.productName   WHERE Customers.id= ? and Date BETWEEN ? and ? GROUP BY Products.productName ORDER By sum DESC;";
     public static final String SQL_STAT_TOTAL_EXPENSES = "SELECT SUM(Price)  FROM Products INNER JOIN Purchases ON Products.productName=Purchases.Product where Purchases.Customer= ? and Date BETWEEN ? and ?;";
-    public static final String SQL_STAT_CUSTOMERS_INFO = "SELECT DISTINCT id, firstName,lastName  FROM Customers INNER  JOIN  Purchases ON Customers.id = Purchases.Customer where Date BETWEEN  ?  and  ? ;";
+    public static final String SQL_STAT_CUSTOMERS_INFO = "(SELECT id, firstName,lastName  FROM Customers INNER JOIN Purchases ON Customers.id = Purchases.customer INNER JOIN Products ON Purchases.Product = Products.productName where  Date BETWEEN ? and ? GROUP BY Customers.id) ORDER BY SUM(Price) DESC ;";
 
     public static final String PROPERTY_URL = "url";
     public static final String PROPERTY_DRIVER = "driver";

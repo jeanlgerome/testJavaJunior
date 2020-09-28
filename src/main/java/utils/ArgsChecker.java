@@ -32,7 +32,7 @@ public class ArgsChecker {
         }
         return arg;
     }
-
+    // проверяет корректность дат
     public static void verify(LocalDate startDate, LocalDate endDate) throws WrongDateException {
         if (endDate.isBefore(startDate)) {
             log.log(Level.WARNING, "endDate should not be earlier than startDate");
@@ -40,6 +40,7 @@ public class ArgsChecker {
         }
     }
 
+    // проверяет аргументы командной строки
     public static boolean verifyCmdArgs(String[] args) {
         if (args.length != 3) {
             return false;

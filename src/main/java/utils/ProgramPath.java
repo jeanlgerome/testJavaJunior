@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class ProgramPath {
 
     private static Logger log = Logger.getLogger(JsonHandlerImpl.class.getName());
-
+    // возвращает директорию, в которой находится jar, если что-то идет не так, то возвращает home директорию
     public static String getPath() {
 
         String programPath = null;

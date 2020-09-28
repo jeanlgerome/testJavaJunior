@@ -26,13 +26,13 @@ public class Main {
     public static void main(String[] args) {
 
         final String programPath = ProgramPath.getPath();
-        final String inputJsonName = args[1];
-        final String outputJsonName = args[2];
-        OutputWriter outputWriter = new OutputWriterImpl(programPath + "//json//" + outputJsonName);
         LoggerUtil loggerUtil = new LoggerUtil();
         loggerUtil.init(programPath);
 
         if (ArgsChecker.verifyCmdArgs(args)) {
+            final String inputJsonName = args[1];
+            final String outputJsonName = args[2];
+            OutputWriter outputWriter = new OutputWriterImpl(programPath + "//json//" + outputJsonName);
             final String operationType = args[0];
             InputReader inputReader = new InputReaderImpl(programPath + "//json//" + inputJsonName);
             JSONObject inputJson;
@@ -53,9 +53,8 @@ public class Main {
                             break;
                     }
                     outputWriter.writeOutputJson(outputJson);
-                    log.log(Level.FINEST, "Process finished successfully");
-                    log.info("Process finished successfully");
-                    System.out.println("-/-/-/-/-Process finished successfully-/-/-/-/-/-/");
+                    log.log(Level.FINEST, "Process finished");
+                    log.info("Process finished");
                 } catch (IOException e) {
                     outputWriter.writeOutputJson(JsonHandlerImpl.
                             createErrorOutput("Ошибка установки properties базы данных"));
@@ -71,10 +70,11 @@ public class Main {
                         createErrorOutput("Некорректный входной json файл. Ошибка парсинга"));
             }
         } else {
+            OutputWriter outputWriter = new OutputWriterImpl(programPath + "//json//output.json");
             outputWriter.writeOutputJson(JsonHandlerImpl.
                     createErrorOutput("Некорректные аргументы командной строки"));
         }
-
+        System.out.println("-/-/-/-/- Process finished -/-/-/-/-/-/");
     }
 
 }

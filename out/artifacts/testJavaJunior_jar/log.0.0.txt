@@ -1,0 +1,160 @@
+сен 28, 2020 2:45:21 PM jsonHandler.JsonHandlerImpl createStatOutput
+WARNING: wrong input time format
+java.time.format.DateTimeParseException: Text '2020-0!! !!-02' could not be parsed at index 5
+	at java.time.format.DateTimeFormatter.parseResolved0(Unknown Source)
+	at java.time.format.DateTimeFormatter.parse(Unknown Source)
+	at java.time.LocalDate.parse(Unknown Source)
+	at jsonHandler.JsonHandlerImpl.createStatOutput(JsonHandlerImpl.java:115)
+	at Main.main(Main.java:52)
+
+сен 28, 2020 2:45:21 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 2:45:48 PM utils.ArgsChecker verify
+WARNING: endDate should not be earlier than startDate
+сен 28, 2020 2:45:48 PM jsonHandler.JsonHandlerImpl createStatOutput
+WARNING:  wrong date sequence
+exceptions.WrongDateException:  endDate should not be earlier than startDate
+	at utils.ArgsChecker.verify(ArgsChecker.java:39)
+	at jsonHandler.JsonHandlerImpl.createStatOutput(JsonHandlerImpl.java:122)
+	at Main.main(Main.java:52)
+
+сен 28, 2020 2:45:48 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 2:46:21 PM reading.InputReaderImpl readInput
+SEVERE:  Exception during input.json parsing
+Unexpected character (!) at position 3.
+	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
+	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:92)
+	at reading.InputReaderImpl.readInput(InputReaderImpl.java:35)
+	at Main.main(Main.java:40)
+
+сен 28, 2020 2:49:46 PM reading.InputReaderImpl readInput
+SEVERE:  Exception during input.json parsing
+Unexpected character (!) at position 3.
+	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
+	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:92)
+	at reading.InputReaderImpl.readInput(InputReaderImpl.java:35)
+	at Main.main(Main.java:40)
+
+сен 28, 2020 2:53:53 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 2:54:25 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:10:27 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:11:54 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:12:15 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:12:44 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:14:27 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:15:07 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:16:16 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:17:19 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:17:56 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:18:22 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 3:19:01 PM dao.DaoFactory getConnection
+SEVERE: Cannot getConnection 
+org.postgresql.util.PSQLException: ВАЖНО: база данных "JuniorTes" не существует (pgjdbc: autodetected server-encoding to be windows-1251, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at dao.DaoFactory.getConnection(DaoFactory.java:68)
+	at dao.DaoImpl.getCustomers(DaoImpl.java:161)
+	at dao.DaoImpl.searchByLastName(DaoImpl.java:66)
+	at dao.DaoImpl.searchByCriteria(DaoImpl.java:33)
+	at jsonHandler.JsonHandlerImpl.createSearchOutput(JsonHandlerImpl.java:39)
+	at Main.main(Main.java:49)
+
+сен 28, 2020 3:19:01 PM dao.DaoImpl getCustomers
+WARNING: exception occurred during getCustomers
+org.postgresql.util.PSQLException: ВАЖНО: база данных "JuniorTes" не существует (pgjdbc: autodetected server-encoding to be windows-1251, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at dao.DaoFactory.getConnection(DaoFactory.java:68)
+	at dao.DaoImpl.getCustomers(DaoImpl.java:161)
+	at dao.DaoImpl.searchByLastName(DaoImpl.java:66)
+	at dao.DaoImpl.searchByCriteria(DaoImpl.java:33)
+	at jsonHandler.JsonHandlerImpl.createSearchOutput(JsonHandlerImpl.java:39)
+	at Main.main(Main.java:49)
+
+сен 28, 2020 3:19:01 PM dao.DaoImpl searchByCriteria
+WARNING: SQLException occurred during searchByCriteria search
+сен 28, 2020 3:19:02 PM jsonHandler.JsonHandlerImpl createSearchOutput
+WARNING: SQLException occurred during OutputJson creation
+org.postgresql.util.PSQLException: ВАЖНО: база данных "JuniorTes" не существует (pgjdbc: autodetected server-encoding to be windows-1251, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at dao.DaoFactory.getConnection(DaoFactory.java:68)
+	at dao.DaoImpl.getCustomers(DaoImpl.java:161)
+	at dao.DaoImpl.searchByLastName(DaoImpl.java:66)
+	at dao.DaoImpl.searchByCriteria(DaoImpl.java:33)
+	at jsonHandler.JsonHandlerImpl.createSearchOutput(JsonHandlerImpl.java:39)
+	at Main.main(Main.java:49)
+
+сен 28, 2020 3:19:02 PM jsonHandler.JsonHandlerImpl createSearchOutput
+WARNING: sql exception occurred during StatOutput creating
+org.postgresql.util.PSQLException: ВАЖНО: база данных "JuniorTes" не существует (pgjdbc: autodetected server-encoding to be windows-1251, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at dao.DaoFactory.getConnection(DaoFactory.java:68)
+	at dao.DaoImpl.getCustomers(DaoImpl.java:161)
+	at dao.DaoImpl.searchByLastName(DaoImpl.java:66)
+	at dao.DaoImpl.searchByCriteria(DaoImpl.java:33)
+	at jsonHandler.JsonHandlerImpl.createSearchOutput(JsonHandlerImpl.java:39)
+	at Main.main(Main.java:49)
+
+сен 28, 2020 3:19:02 PM Main main
+INFO: Process finished successfully
+сен 28, 2020 4:02:01 PM writing.OutputWriterImpl writeOutputJson
+SEVERE: exception during outputJson writing
+java.io.FileNotFoundException: C:\Users\savin\Desktop\java\testJavaJunior\out\artifacts\testJavaJunior_jar\json1\output.json (Системе не удается найти указанный путь)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at writing.OutputWriterImpl.writeOutputJson(OutputWriterImpl.java:23)
+	at Main.main(Main.java:75)
+

@@ -14,8 +14,8 @@ import java.time.format.DateTimeParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//класс обрабатывает входной json файл, создает выходной json
 public class JsonHandlerImpl implements JsonHandler {
-
 
     private static Logger log = Logger.getLogger(JsonHandlerImpl.class.getName());
     private Dao dao;
@@ -24,6 +24,7 @@ public class JsonHandlerImpl implements JsonHandler {
         this.dao = dao;
     }
 
+    //достает из входного файла критерии, проверяет их и передает их в DaoImpl, из результата создает выходной json
     @Override
     public JSONObject createSearchOutput(JSONObject jsonInput) {
         JSONObject searchOutput = new JSONObject();
@@ -48,6 +49,9 @@ public class JsonHandlerImpl implements JsonHandler {
         log.log(Level.FINEST, "SearchOutput has been created");
         return searchOutput;
     }
+
+    // -----------------------------
+    // 4 метода ниже создают result на основе критерия и списка пользователей, полученного по критерию
 
     public static JSONObject createLastNameResult(String lastName, JSONArray customersJson) {
         JSONObject result = new JSONObject();
@@ -90,7 +94,10 @@ public class JsonHandlerImpl implements JsonHandler {
         log.log(Level.FINEST, "BadCustomers result has been created");
         return result;
     }
+    // ^^^^ 4 метода выше создают result на основе критерия и списка пользователей, полученного по критерию
+    //--------------------------
 
+    // создает json в случае ошибки
     public static JSONObject createErrorOutput(String errorMessage) {
         JSONObject errorOutput = new JSONObject();
         errorOutput.put("type", "error");
@@ -98,6 +105,9 @@ public class JsonHandlerImpl implements JsonHandler {
         return errorOutput;
     }
 
+    // достает из входного json даты, проверяет их. Получает на основе дат список покупателей( их имена и айди),
+    // упорядоченный по сумме, для каждого покупателя из списка получает статистику покупателя по покупкам и полную сумму
+    // суммирует суммы, находит среднее, собирает всё в statOutput
     @Override
     public JSONObject createStatOutput(JSONObject jsonInput) {
         JSONObject statOutput = new JSONObject();

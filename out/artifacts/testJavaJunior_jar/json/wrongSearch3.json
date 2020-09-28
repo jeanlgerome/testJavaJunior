@@ -1,0 +1,10 @@
+{
+   "criterias": [ 
+                   
+                  {"wrongcriteria": "несуществующий критерий"},
+                              
+                   {"productName": "Маасдам" ,"minTimes": 1}, 
+                                                         
+                         {"minExpenses": -1, "maxExpenses": 888}
+                                                                                        ]
+                                                                                             }

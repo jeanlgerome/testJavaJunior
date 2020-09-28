@@ -21,6 +21,7 @@ public class DaoImpl implements Dao {
         this.daoFactory = daoFactory;
     }
 
+    // выбирает необходимый метод поиска в зависимости от критерия
     @Override
     public JSONObject searchByCriteria(JSONObject criteria) throws SQLException {
         JSONObject result = new JSONObject();
@@ -46,6 +47,7 @@ public class DaoImpl implements Dao {
                         result = searchBadCustomers(ArgsChecker.verify((Long) criteria.get("badCustomers")));
                         break;
                     default:
+                        result.put("error", "Неизвестный критерий");
                 }
                 break;
             } catch (SQLException e) {
@@ -61,6 +63,8 @@ public class DaoImpl implements Dao {
         return result;
     }
 
+  //------------------------------------
+    //ниже находятся 4 метода поиска для операции search
     private JSONObject searchByLastName(String lastName) throws SQLException {
         JSONObject result;
         JSONArray customersJson = getCustomers(Constants.SQL_LAST_NAME, lastName);
@@ -87,7 +91,11 @@ public class DaoImpl implements Dao {
         return JsonHandlerImpl.createBadCustomersResult(customersNumber, customersJson);
     }
 
+    // выше находятся 4 метода поиска для операции search
+    //-------------------------------------------
 
+    //-------------------------------------------
+    // ниже находятся 3 метода поиска для операции stat
     @Override
     public JSONArray findCustomersInfo(LocalDate startDate, LocalDate endDate) throws SQLException {
         Date sqlStartDate = Date.valueOf(startDate);
@@ -109,6 +117,9 @@ public class DaoImpl implements Dao {
         Date sqlEndDate = Date.valueOf(endDate);
         return getPurchases(userId, sqlStartDate, sqlEndDate);
     }
+    // выше находятся 3 метода поиска для операции stat
+    //-------------------------------------------
+
 
     private JSONArray getCustomersInfo(Object... values) throws SQLException {
         JSONArray customersInfoJson;
@@ -155,6 +166,7 @@ public class DaoImpl implements Dao {
         return totalExpenses;
     }
 
+    // общий метод для запросов, которые возврращают имя и фамилию покупателей
     private JSONArray getCustomers(String sqlQuery, Object... values) throws SQLException {
         JSONArray customersJson;
         try (

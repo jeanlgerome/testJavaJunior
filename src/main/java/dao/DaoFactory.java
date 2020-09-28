@@ -22,12 +22,11 @@ public class DaoFactory {
     private String username;
     private String password;
 
-    //  ?????
     public DaoFactory(String programPath) throws IOException, ClassNotFoundException {
         setProperties(programPath);
         setDriver();
     }
-
+    // возвращает драйвер базы данных
     private void setDriver() throws ClassNotFoundException {
         try {
             if (driver != null) {
@@ -38,9 +37,8 @@ public class DaoFactory {
             throw e;
         }
     }
-
+    // устанавливает проперти из файла
     private void setProperties(String filePath) throws IOException {
-
         Properties prop = new Properties();
         try (FileInputStream fis = new FileInputStream(filePath + "application.properties")
         ) {

@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+// парсит ResultSets, возвращает необходимые даннные
+
 public class ResultSetParser {
 
     private static Logger log = Logger.getLogger(ResultSetParser.class.getName());
