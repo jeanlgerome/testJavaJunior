@@ -12,7 +12,8 @@ application.properties - проперти базы данных
 заполнить application.properties, далее запустить jar файл через командную строку, пример:   
 java -jar testJavaJunior.jar search input.json output.json    
 где, search/stat - тип операции, input.json - имя входного файла, output.json - имя выходного файла;  
-входной и выходной файлы должны находится в папке json
+входной и выходной файлы должны находится в папке json.  
+Если входные параметры заданы неправильно, то сообщение об ошибке будет записано в файл по умолчанию - output.json
   
   
 Дамп базы данных находится в testJavaJunior/backup/
